@@ -9,7 +9,10 @@ var app = express();
 require('./database');
 require('./seed');
 
+// This tells express where to serve the static files from
+// Serves the angular app from the public folder
 app.use('/', express.static('public'));
+
 app.use(parser.json());
 
 app.use('/api', router);
